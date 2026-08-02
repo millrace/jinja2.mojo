@@ -38,7 +38,7 @@ struct Container(Copyable, Movable):
         self.keys = List[String]()
         self.vals = List[Value]()
 
-    def __del__(deinit self):
+    def __deinit__(deinit self):
         pass
 
 

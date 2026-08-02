@@ -59,7 +59,7 @@ struct StmtNodeList(Copyable, Movable):
     def __init__(out self):
         self.items = List[StmtNode]()
 
-    def __del__(deinit self):
+    def __deinit__(deinit self):
         pass
 
 
