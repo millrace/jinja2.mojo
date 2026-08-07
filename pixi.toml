@@ -13,6 +13,6 @@ test = "mkdir -p build && mojo build tests/unit_test.mojo -I src -o build/jinja2
 conformance = "python tests/test_conformance.py"
 
 [dependencies]
-mojo = "==1.0.0b3.dev2026080206"
+mojo = "==1.0.0rc0"
 python = ">=3.11"
 jinja2 = "*"
