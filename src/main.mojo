@@ -10,9 +10,9 @@ template-authored `raise_exception` apart from internal errors:
 """
 
 from std.sys import argv, exit
-from value import Value
-from json import parse_json
-from template import Template
+from jinja2.value import Value
+from jinja2.json import parse_json
+from jinja2.template import Template
 
 
 def _read_file(path: String) raises -> String:

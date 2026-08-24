@@ -11,7 +11,7 @@ source before lexing).
 """
 
 from std.collections import List
-from json import string_to_bytes, bytes_to_string, _b
+from jinja2.json import string_to_bytes, bytes_to_string, _b
 
 # ── Template segments ─────────────────────────────────────────────────────────
 comptime SEG_TEXT: UInt8 = 0

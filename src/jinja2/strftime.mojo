@@ -6,7 +6,7 @@ plus the common ones are implemented (corpus uses `"%d %b %Y"`).
 """
 
 from std.collections import List
-from json import _b, bytes_to_string
+from jinja2.json import _b, bytes_to_string
 
 
 def _mon_abbr(m: Int) raises -> String:

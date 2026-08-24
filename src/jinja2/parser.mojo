@@ -11,7 +11,7 @@ then the postfix level — attribute / subscript / slice / call / `|filter` /
 """
 
 from std.collections import List
-from lexer import (
+from jinja2.lexer import (
     Segment,
     ExprToken,
     tokenize_expr,
@@ -24,7 +24,7 @@ from lexer import (
     T_OP,
     T_EOF,
 )
-from ast import (
+from jinja2.ast import (
     ExprNode,
     StmtNode,
     e_int,

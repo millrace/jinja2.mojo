@@ -9,7 +9,7 @@ caller can distinguish template-authored validation from internal errors.
 """
 
 from std.collections import List, Optional
-from value import (
+from jinja2.value import (
     Value,
     values_equal,
     VUNDEF,
@@ -22,7 +22,7 @@ from value import (
     VMAP,
     VCALL,
 )
-from ast import (
+from jinja2.ast import (
     ExprNode,
     StmtNode,
     E_INT,
@@ -45,14 +45,14 @@ from ast import (
     S_SET,
     S_SETATTR,
 )
-from json import (
+from jinja2.json import (
     to_json,
     string_to_bytes,
     bytes_to_string,
     _utf8_decode,
     _utf8_encode,
 )
-from strftime import strftime_utc
+from jinja2.strftime import strftime_utc
 
 
 struct Frame(Copyable, Movable):

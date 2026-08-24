@@ -1,14 +1,15 @@
 [workspace]
 name = "jinja2"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Mojo implementation of the Jinja2 subset for chat templates"
+preview = ["pixi-build"]
 channels = ["https://conda.modular.com/max-nightly", "conda-forge"]
 platforms = ["osx-arm64"]
 
 [tasks]
 build = "mojo build src/main.mojo -o build/jinja2"
 # Unit suite: value/json helpers + end-to-end template rendering (src is the
-# include root — `from json/value/template import …` resolve against src/).
+# include root — the jinja2 package dir resolves against src/).
 test = "mkdir -p build && mojo build tests/unit_test.mojo -I src -o build/jinja2-test && ./build/jinja2-test"
 conformance = "python tests/test_conformance.py"
 
@@ -16,3 +17,26 @@ conformance = "python tests/test_conformance.py"
 mojo = "==1.0.0"
 python = ">=3.11"
 jinja2 = "*"
+
+# ── pixi-build: consumable as a pixi source dependency ──────────────────────
+# Conda package name is jinja2-mojo (conda-forge owns "jinja2"); the Mojo
+# import stays `from jinja2 import …`.
+[package]
+name = "jinja2-mojo"
+version = "0.1.1"
+
+[package.build]
+backend = { name = "pixi-build-mojo", version = "0.*" }
+
+[package.build.config.pkg]
+path = "src/jinja2"
+name = "jinja2"
+
+[package.host-dependencies]
+mojo-compiler = "==1.0.0"
+
+[package.build-dependencies]
+mojo-compiler = "==1.0.0"
+
+[package.run-dependencies]
+mojo-compiler = "==1.0.0"

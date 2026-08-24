@@ -6,9 +6,9 @@ for loops, `set`, the `tojson` filter, and template-authored
 `raise_exception`. Run via `pixi run test`.
 """
 
-from json import parse_json, to_json
-from value import Value, values_equal
-from template import Template
+from jinja2.json import parse_json, to_json
+from jinja2.value import Value, values_equal
+from jinja2.template import Template
 
 
 def _check(cond: Bool, msg: String) raises:
