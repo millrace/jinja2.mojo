@@ -1,5 +1,5 @@
 name = "jinja2-mojo"
-version = "0.1.1"
+version = "0.1.2"
 description = "A Mojo implementation of the Jinja2 subset for chat templates"
 tags = ["templates", "jinja2", "chat"]
 # other tins this one depends on; omit if none
